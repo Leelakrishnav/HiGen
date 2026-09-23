@@ -1,11 +1,492 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HiGen | Monthly Car Cleaning & Bathroom Service Subscriptions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        higenOrange: '#FF6B00',
+                        higenOrangeHover: '#E05E00',
+                        higenDark: '#0F172A',
+                        higenSlate: '#1E293B',
+                        higenCard: '#334155'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
 </head>
-<body>
-   <img src="HiGen Logo.jpeg" alt="Indel" width="600"> 
+<body class="bg-higenDark text-gray-100 antialiased selection:bg-higenOrange selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-higenOrange text-white text-xs md:text-sm font-semibold py-2 px-4 text-center">
+        🎉 Special Launch Offer: Get 20% OFF on your first 3 months of Car & Bathroom Subscriptions! Use Code: <span class="underline font-bold">HIGEN20</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-higenDark/95 backdrop-blur-md border-b border-gray-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo Area -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="HiGen logo.jpeg" alt="HiGen Logo" class="h-12 w-auto object-contain rounded-md shadow-sm border border-gray-700 bg-white p-1">
+                <span class="text-xl font-extrabold tracking-tight text-white hidden sm:inline">Hi<span class="text-higenOrange">Gen</span></span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
+                <a href="#services" class="hover:text-higenOrange transition-colors">Services</a>
+                <a href="#subscriptions" class="hover:text-higenOrange transition-colors">Subscriptions</a>
+                <a href="#how-it-works" class="hover:text-higenOrange transition-colors">How It Works</a>
+                <a href="#testimonials" class="hover:text-higenOrange transition-colors">Reviews</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="flex items-center gap-4">
+                <button onclick="openBookingModal('General Subscription', 'Monthly Plan')" class="bg-higenOrange hover:bg-higenOrangeHover text-white font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-higenOrange/30 transition-all transform hover:-translate-y-0.5 text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-check"></i> Book Subscription
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-20 lg:py-28 bg-gradient-to-b from-higenDark via-higenSlate to-higenDark">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#FF6B00_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-higenOrange/10 text-higenOrange border border-higenOrange/30">
+                        <i class="fa-solid fa-sparkles"></i> Doorstep Monthly Maintenance
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Effortless Shine, <br><span class="text-higenOrange">Every Single Month.</span>
+                    </h1>
+                    <p class="text-gray-300 text-lg max-w-xl mx-auto lg:mx-0">
+                        Professional doorstep car cleaning and bathroom deep-sanitization services on hassle-free monthly subscriptions. Leave the dirty work to us!
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <button onclick="openBookingModal('Combo Plan', 'Monthly Plan')" class="w-full sm:w-auto bg-higenOrange hover:bg-higenOrangeHover text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-higenOrange/40 transition-all text-base flex items-center justify-center gap-3">
+                            <span>Get Started Now</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <a href="#services" class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 text-gray-200 font-semibold px-6 py-4 rounded-xl border border-gray-700 transition-all text-center">
+                            Explore Services
+                        </a>
+                    </div>
+                    <!-- Trust Stats -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-gray-800/80 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl font-bold text-white">5,000+</p>
+                            <p class="text-xs text-gray-400">Happy Homes & Cars</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white">30 Days</p>
+                            <p class="text-xs text-gray-400">Regular Upkeep</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white">4.9/5</p>
+                            <p class="text-xs text-gray-400">Customer Rating</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hero Image Grid -->
+                <div class="relative grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&q=80&w=600" alt="Car Cleaning" class="rounded-2xl shadow-2xl object-cover h-64 w-full border border-gray-700">
+                        <div class="bg-higenSlate p-6 rounded-2xl border border-gray-700 shadow-xl">
+                            <i class="fa-solid fa-shield-halved text-higenOrange text-3xl mb-2"></i>
+                            <h3 class="font-bold text-white text-lg">Eco-Friendly</h3>
+                            <p class="text-xs text-gray-400 mt-1">Water-saving techniques & safe organic cleaning chemicals.</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <div class="bg-higenOrange p-6 rounded-2xl text-white shadow-xl shadow-higenOrange/20">
+                            <i class="fa-solid fa-clock-rotate-left text-3xl mb-2"></i>
+                            <h3 class="font-bold text-lg">On-Schedule</h3>
+                            <p class="text-xs text-orange-100 mt-1">Scheduled visits at your convenient doorstep time slot.</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=600" alt="Bathroom Cleaning" class="rounded-2xl shadow-2xl object-cover h-64 w-full border border-gray-700">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services" class="py-24 bg-higenSlate/50 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-higenOrange font-semibold text-sm uppercase tracking-wider">What We Do</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Our Core Monthly Services</h2>
+                <p class="text-gray-400 mt-3">Choose dedicated monthly packages designed to keep your vehicle spotless and bathrooms hygienic all month long.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Car Cleaning Card -->
+                <div class="bg-higenDark rounded-3xl p-8 border border-gray-800 shadow-xl hover:border-higenOrange/50 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-60 rounded-2xl overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=800" alt="Car Cleaning Service" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-higenOrange text-white font-bold text-xs px-3 py-1.5 rounded-full shadow-md">
+                                Daily / Alternate Days
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Car Cleaning Subscription</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Comprehensive exterior dusting, wet wash, microfiber polishing, and dashboard cleaning done regularly at your parking spot.
+                        </p>
+                        <ul class="space-y-3 mb-8 text-sm text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-higenOrange"></i> Exterior water wash & dusting</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-higenOrange"></i> Tyre dressing & alloy shine</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-higenOrange"></i> Interior dry vacuuming (Weekly)</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-higenOrange"></i> Dedicated trained caretaker assigned</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('Car Cleaning Subscription', 'Monthly Plan')" class="w-full bg-higenSlate hover:bg-higenOrange text-white font-bold py-3.5 rounded-xl transition-all text-center border border-gray-700 hover:border-higenOrange">
+                        Subscribe Car Plan
+                    </button>
+                </div>
+
+                <!-- Bathroom Cleaning Card -->
+                <div class="bg-higenDark rounded-3xl p-8 border border-gray-800 shadow-xl hover:border-higenOrange/50 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-60 rounded-2xl overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800" alt="Bathroom Service" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 right-4 bg-higenOrange text-white font-bold text-xs px-3 py-1.5 rounded-full shadow-md">
+                                Weekly / Bi-Weekly Deep Clean
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Bathroom Service Subscription</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Complete descaling, floor scrubbing, sanitization, toilet bowl disinfection, and chrome fitting polishing by expert cleaners.
+                        </p>
+                        <ul class="space-y-3 mb-8 text-sm text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-higenOrange"></i> Hard water stain removal</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-higenOrange"></i> Floor & wall tile scrubbing</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-higenOrange"></i> Sanitary fixture descaling & shine</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-higenOrange"></i> Germ-free anti-bacterial fogging</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('Bathroom Cleaning Subscription', 'Monthly Plan')" class="w-full bg-higenSlate hover:bg-higenOrange text-white font-bold py-3.5 rounded-xl transition-all text-center border border-gray-700 hover:border-higenOrange">
+                        Subscribe Bathroom Plan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscriptions Pricing Section -->
+    <section id="subscriptions" class="py-24 bg-higenDark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-higenOrange font-semibold text-sm uppercase tracking-wider">Flexible Tiers</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Transparent Monthly Pricing</h2>
+                <p class="text-gray-400 mt-3">No hidden costs. Pause, cancel, or switch plans anytime with our flexible membership model.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tier 1 -->
+                <div class="bg-higenSlate/40 rounded-3xl p-8 border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Essential Car Care</h3>
+                        <p class="text-xs text-gray-400 mt-1">Perfect for daily commuters</p>
+                        <div class="my-6">
+                            <span class="text-4xl font-extrabold text-white">₹999</span>
+                            <span class="text-gray-400 text-sm"> / month</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-higenOrange"></i> 26 Days Exterior Cleaning</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-higenOrange"></i> Microfiber dusting</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-higenOrange"></i> Window glass wipe</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('Essential Car Care', '₹999/month')" class="w-full bg-gray-800 hover:bg-higenOrange text-white font-bold py-3 rounded-xl transition-all border border-gray-700">
+                        Choose Essential
+                    </button>
+                </div>
+
+                <!-- Tier 2 (Highlighted) -->
+                <div class="bg-higenSlate rounded-3xl p-8 border-2 border-higenOrange shadow-2xl flex flex-col justify-between relative transform md:-translate-y-2">
+                    <div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2 bg-higenOrange text-white text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-wider shadow-md">
+                        Most Popular
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Complete Combo Care</h3>
+                        <p class="text-xs text-orange-200 mt-1">Car Cleaning + Bathroom Deep Clean</p>
+                        <div class="my-6">
+                            <span class="text-4xl font-extrabold text-white">₹2,499</span>
+                            <span class="text-orange-200 text-sm"> / month</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-200 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-higenOrange"></i> Daily Car Exterior Wash</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-higenOrange"></i> Bi-Weekly Bathroom Deep Clean</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-higenOrange"></i> Interior Vacuuming Included</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-higenOrange"></i> Priority Support & Scheduling</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('Complete Combo Care', '₹2,499/month')" class="w-full bg-higenOrange hover:bg-higenOrangeHover text-white font-bold py-3.5 rounded-xl shadow-lg shadow-higenOrange/30 transition-all">
+                        Get Combo Package
+                    </button>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="bg-higenSlate/40 rounded-3xl p-8 border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Bathroom Sanitization</h3>
+                        <p class="text-xs text-gray-400 mt-1">For pristine hygiene</p>
+                        <div class="my-6">
+                            <span class="text-4xl font-extrabold text-white">₹1,599</span>
+                            <span class="text-gray-400 text-sm"> / month</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-higenOrange"></i> 4 Deep Cleans per month</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-higenOrange"></i> Tile descaling & stain removal</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-higenOrange"></i> Disinfection & Odor control</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('Bathroom Sanitization', '₹1,599/month')" class="w-full bg-gray-800 hover:bg-higenOrange text-white font-bold py-3 rounded-xl transition-all border border-gray-700">
+                        Choose Bathroom Plan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-24 bg-higenSlate/30 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-higenOrange font-semibold text-sm uppercase tracking-wider">Simple Process</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">How HiGen Works</h2>
+                <p class="text-gray-400 mt-3">Get started in 4 simple steps and experience hassle-free maintenance.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-higenDark p-6 rounded-2xl border border-gray-800 text-center relative">
+                    <div class="w-12 h-12 bg-higenOrange text-white rounded-xl flex items-center justify-center font-bold text-lg mx-auto mb-4 shadow-lg shadow-higenOrange/20">1</div>
+                    <h3 class="font-bold text-white text-lg mb-2">Select Service</h3>
+                    <p class="text-xs text-gray-400">Choose between car cleaning, bathroom service, or our combo subscription.</p>
+                </div>
+                <div class="bg-higenDark p-6 rounded-2xl border border-gray-800 text-center relative">
+                    <div class="w-12 h-12 bg-higenOrange text-white rounded-xl flex items-center justify-center font-bold text-lg mx-auto mb-4 shadow-lg shadow-higenOrange/20">2</div>
+                    <h3 class="font-bold text-white text-lg mb-2">Book Details</h3>
+                    <p class="text-xs text-gray-400">Fill in your address, contact info, and preferred timings through our quick form.</p>
+                </div>
+                <div class="bg-higenDark p-6 rounded-2xl border border-gray-800 text-center relative">
+                    <div class="w-12 h-12 bg-higenOrange text-white rounded-xl flex items-center justify-center font-bold text-lg mx-auto mb-4 shadow-lg shadow-higenOrange/20">3</div>
+                    <h3 class="font-bold text-white text-lg mb-2">Professional Assigned</h3>
+                    <p class="text-xs text-gray-400">Our verified and trained technician is assigned to your location.</p>
+                </div>
+                <div class="bg-higenDark p-6 rounded-2xl border border-gray-800 text-center relative">
+                    <div class="w-12 h-12 bg-higenOrange text-white rounded-xl flex items-center justify-center font-bold text-lg mx-auto mb-4 shadow-lg shadow-higenOrange/20">4</div>
+                    <h3 class="font-bold text-white text-lg mb-2">Enjoy Cleanliness</h3>
+                    <p class="text-xs text-gray-400">Sit back and relax while we maintain your car and bathrooms sparkling clean.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24 bg-higenDark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-higenOrange font-semibold text-sm uppercase tracking-wider">Customer Reviews</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Loved by Our Subscribers</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-higenSlate/40 p-8 rounded-3xl border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-higenOrange gap-1 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"The car cleaning subscription is fantastic! The caretaker arrives on time every morning and my car looks brand new before I leave for work."</p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-gray-800 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-higenOrange text-white font-bold flex items-center justify-center text-sm">RK</div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Rahul Kumar</h4>
+                            <p class="text-xs text-gray-400">Car Subscriber</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-higenSlate/40 p-8 rounded-3xl border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-higenOrange gap-1 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"We took the combo package for our apartment. Bathroom deep cleaning once every two weeks has made our home maintenance completely stress-free!"</p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-gray-800 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-higenOrange text-white font-bold flex items-center justify-center text-sm">PS</div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Priya Sharma</h4>
+                            <p class="text-xs text-gray-400">Combo Subscriber</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-higenSlate/40 p-8 rounded-3xl border border-gray-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-higenOrange gap-1 text-sm mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">"Highly professional staff and very responsive support. Hard water stains on my bathroom tiles are completely gone. Worth every rupee."</p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-gray-800 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-higenOrange text-white font-bold flex items-center justify-center text-sm">AV</div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Anil Varma</h4>
+                            <p class="text-xs text-gray-400">Bathroom Subscriber</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-higenSlate border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <img src="HiGen logo.jpeg" alt="HiGen Logo" class="h-10 w-auto object-contain rounded bg-white p-1">
+                <span class="text-lg font-bold text-white">Hi<span class="text-higenOrange">Gen</span></span>
+            </div>
+            <p class="text-sm text-gray-400">© 2026 HiGen Services. All rights reserved. Professional Car & Bathroom Subscriptions.</p>
+            <div class="flex items-center gap-4 text-gray-400">
+                <a href="#" class="hover:text-higenOrange transition-colors"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                <a href="#" class="hover:text-higenOrange transition-colors"><i class="fa-brands fa-instagram text-lg"></i></a>
+                <a href="#" class="hover:text-higenOrange transition-colors"><i class="fa-brands fa-whatsapp text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+        <div class="bg-higenSlate border border-gray-700 rounded-3xl max-w-lg w-full p-8 shadow-2xl relative transform transition-all">
+            <button onclick="closeBookingModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="mb-6">
+                <span class="text-higenOrange font-semibold text-xs uppercase tracking-wider">Instant Booking</span>
+                <h3 class="text-2xl font-bold text-white mt-1">Start Your Monthly Subscription</h3>
+                <p class="text-xs text-gray-400 mt-1">Fill in your details below and we will contact you immediately to confirm your slot.</p>
+            </div>
+
+            <!-- Form submitted directly to PHP script -->
+            <form id="subscriptionForm" action="process-booking.php" method="POST" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Full Name</label>
+                    <input type="text" name="name" required class="w-full bg-higenDark border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-higenOrange" placeholder="Enter your full name">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1">Email Address</label>
+                        <input type="email" name="email" required class="w-full bg-higenDark border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-higenOrange" placeholder="your@email.com">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1">Contact Number</label>
+                        <input type="tel" name="contact" required class="w-full bg-higenDark border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-higenOrange" placeholder="9876543210">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1">Service Type</label>
+                        <select id="modalServiceType" name="service_type" class="w-full bg-higenDark border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-higenOrange">
+                            <option value="Car Cleaning Subscription">Car Cleaning Subscription</option>
+                            <option value="Bathroom Cleaning Subscription">Bathroom Cleaning Subscription</option>
+                            <option value="Complete Combo Care">Complete Combo Care</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1">Selected Plan</label>
+                        <input type="text" id="modalPlan" name="plan" readonly class="w-full bg-higenDark/50 border border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-300 focus:outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Service Address / Location</label>
+                    <textarea name="address" rows="3" required class="w-full bg-higenDark border border-gray-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-higenOrange" placeholder="Enter your complete home or apartment address"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-higenOrange hover:bg-higenOrangeHover text-white font-bold py-3.5 rounded-xl shadow-lg shadow-higenOrange/30 transition-all text-sm mt-2">
+                    Confirm & Submit Subscription
+                </button>
+            </form>
+            <div id="formSuccessMsg" class="hidden text-center py-8">
+                <div class="w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white">Booking Submitted Successfully!</h4>
+                <p class="text-sm text-gray-300 mt-2">Thank you! Your details have been sent to our team and emailed directly to <span class="text-higenOrange font-semibold">leelakrishna5611@gmail.com</span>.</p>
+                <button onclick="closeBookingModal()" class="mt-6 bg-gray-800 hover:bg-gray-700 text-white font-bold px-6 py-2.5 rounded-xl text-sm border border-gray-700">Close Window</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Modal & AJAX Form Submission -->
+    <script>
+        const modal = document.getElementById('bookingModal');
+        const modalServiceType = document.getElementById('modalServiceType');
+        const modalPlan = document.getElementById('modalPlan');
+        const subscriptionForm = document.getElementById('subscriptionForm');
+        const formSuccessMsg = document.getElementById('formSuccessMsg');
+
+        function openBookingModal(serviceName, planName) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            if (serviceName) {
+                modalServiceType.value = serviceName;
+            }
+            if (planName) {
+                modalPlan.value = planName;
+            }
+            subscriptionForm.classList.remove('hidden');
+            formSuccessMsg.classList.add('hidden');
+        }
+
+        function closeBookingModal() {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // Handle AJAX form submission so page doesn't reload
+        subscriptionForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(subscriptionForm);
+
+            fetch('process-booking.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                subscriptionForm.classList.add('hidden');
+                formSuccessMsg.classList.remove('hidden');
+                subscriptionForm.reset();
+            })
+            .catch(error => {
+                alert('There was an error submitting your booking. Please try again.');
+            });
+        });
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeBookingModal();
+            }
+        }
+    </script>
 </body>
 </html>
